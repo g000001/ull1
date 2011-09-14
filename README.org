@@ -1,0 +1,4 @@
+* Unrolled linked list適当実装
+
+http://ja.wikipedia.org/wiki/Unrolled_linked_list
+
