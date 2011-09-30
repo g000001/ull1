@@ -145,7 +145,7 @@
            (decf pos len) )))
      (error "The index ~D is too large." index) ))
 
-(defun ull-element-push (new-el ull-element pos)
+#|(defun ull-element-push (new-el ull-element pos)
   (let ((vec (make-array 10 :fill-pointer 3))
         (pos 1))
   (setf (aref vec 1) '*)
@@ -153,7 +153,7 @@
   (loop :for idx :downfrom (length vec) :to pos
         :do (setf (aref vec idx)
                   (aref vec (1- idx))))
-  vec))
+  vec))|#
 
 (test location
   (is (string= (with-output-to-string (out)
@@ -164,7 +164,8 @@
                    (dotimes (i (length ull))
                      (multiple-value-bind (elt offset cons)
                                           (location ull i)
-                       (princ (aref elt offset)) )) ))
+                       (princ (aref elt offset)
+                              out) )) ))
                "012345678910111213141516171819")))
 
 (test ull
